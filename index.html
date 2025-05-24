@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Home</title>
+  <style>
+    body { font-family:sans-serif; margin:0; background:#faf8f6; color:#222; }
+    header { background:#fff8ef; box-shadow:0 2px 6px #eee; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1em; max-width:1100px; margin:auto; }
+    .logo { font-weight:700; font-size:1.5em; color:#b46e46; }
+    nav ul { display:flex; gap:1em; list-style:none; margin:0; padding:0; }
+    nav a { text-decoration:none; color:#222; font-weight:500; padding:0.3em 0.8em; border-radius:5px; }
+    nav a.active, nav a:hover { background:#ffe3c8; color:#b46e46; }
+    main { max-width:1100px; margin:auto; padding:1em; }
+    .hero { background:#fff5e8; border-radius:10px; padding:2em 1em; display:flex; flex-wrap:wrap; align-items:center; }
+    .hero-content { flex:2 1 280px; min-width:220px; }
+    .hero-content h1 { margin-top:0; font-size:2.2em; }
+    .hero-content p { font-size:1.1em; }
+    .cta-button { display:inline-block; margin-top:1em; background:#b46e46; color:#fff; padding:0.7em 1.4em; border-radius:6px; font-weight:600; text-decoration:none; transition:background .2s; }
+    .cta-button:hover { background:#a95c30; }
+    #hero-media { flex:1 1 220px; min-width:220px; margin-left:2em; }
+    #hero-media video, #hero-media img { max-width:100%; border-radius:8px; }
+    section { margin:2.2em 0; }
+    .featured-services .service-grid { display:flex; flex-wrap:wrap; gap:2em; }
+    .service-card { background:#fff; border-radius:10px; box-shadow:0 2px 12px #f5e2d0; padding:1.2em; flex:1 1 280px; min-width:220px; }
+    .service-card img { width:100%; max-height:140px; object-fit:cover; border-radius:7px; }
+    .testimonials-container { display:flex; gap:1.5em; flex-wrap:wrap; }
+    .testimonial-card { background:#fff; border-radius:10px; box-shadow:0 2px 12px #f5e2d0; padding:1.2em; flex:1 1 220px; min-width:180px; text-align:center; }
+    .testimonial-card img, .testimonial-card video { width:80px; height:80px; object-fit:cover; border-radius:50%; margin-bottom:0.7em; }
+    .testimonial-author { font-style:italic; color:#b46e46; margin:0.5em 0 0; }
+    footer { text-align:center; padding:2em 1em; color:#b46e46; background:#fff5e8; margin-top:2em; }
+    @media (max-width:800px) {
+      .hero { flex-direction:column; gap:2em;}
+      #hero-media { margin-left:0; }
+      .featured-services .service-grid { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+      <div class="hero-content">
+        <h1>Wake Up to Wellness</h1>
+        <p>Begin your journey to holistic well-being with Dr. C.</p>
+        <a href="services.html" class="cta-button">Discover Your Path</a>
+      </div>
+      <div id="hero-media"></div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <h2>Welcome to Wellness Wake Up</h2>
+      <p>
+        Guided by Dr. C’s 30+ years of experience, Wellness Wake Up is dedicated to your personal growth, balance, and transformation. Explore the benefits of Tantric Yoga and personalized coaching designed for your unique journey.
+      </p>
+    </section>
+
+    <!-- Featured Services -->
+    <section class="featured-services">
+      <h2>Featured Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="images/tantric-yoga.jpg" alt="Tantric Yoga" loading="lazy">
+          <h3>Tantric Yoga</h3>
+          <p>
+            Experience a unique, holistic approach to yoga that nurtures your mind, body, and spirit. Dr. C’s Tantric Yoga blends ancient wisdom with modern insights for profound transformation.
+          </p>
+        </div>
+        <div class="service-card">
+          <img src="images/coaching.jpg" alt="Bi-Weekly Coaching" loading="lazy">
+          <h3>Bi-Weekly Coaching</h3>
+          <p>
+            Unlock your potential with Dr. C’s personalized coaching. Dive deep into mindfulness, stress management, relationships, and personal growth with expert guidance every step of the way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <h2>What Seekers Say</h2>
+      <div class="testimonials-container"></div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-final">
+      <h2>Ready to Begin?</h2>
+      <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Hero Section: Add image or video
+    const heroMedia = document.getElementById('hero-media');
+    heroMedia.innerHTML = `
+      <video autoplay muted loop playsinline poster="images/hero-poster.jpg" style="width:100%;max-width:320px;">
+        <source src="videos/hero.mp4" type="video/mp4">
+        <img src="images/hero-poster.jpg" alt="Serene Yoga Scene">
+      </video>
+    `;
+
+    // Testimonials: Add testimonials with photos/videos
+    const testimonials = [
+      {
+        type: 'photo',
+        name: 'Michelle P.',
+        text: "Dr. C helped me rediscover my inner peace and strength. Her yoga sessions are transformational.",
+        img: 'images/testimonial1.jpg'
+      },
+      {
+        type: 'video',
+        name: 'James L.',
+        text: "Coaching with Dr. C gave me the clarity I needed to move forward in my life.",
+        video: 'videos/testimonial2.mp4'
+      },
+      {
+        type: 'photo',
+        name: 'Aisha R.',
+        text: "The combination of yoga and coaching was exactly what I needed. Thank you, Dr. C!",
+        img: 'images/testimonial3.jpg'
+      }
+    ];
+
+    const testimonialsContainer = document.querySelector('.testimonials-container');
+    testimonials.forEach(t => {
+      let media = '';
+      if (t.type === 'photo') {
+        media = `<img src="${t.img}" alt="${t.name}" loading="lazy">`;
+      } else if (t.type === 'video') {
+        media = `
+          <video controls width="80" poster="images/video-poster.jpg" style="border-radius:50%;">
+            <source src="${t.video}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+      }
+      testimonialsContainer.innerHTML += `
+        <div class="testimonial-card">
+          ${media}
+          <blockquote>${t.text}</blockquote>
+          <p class="testimonial-author">- ${t.name}</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Services</title>
+  <style>
+    body { font-family:sans-serif; margin:0; background:#faf8f6; color:#222; }
+    header { background:#fff8ef; box-shadow:0 2px 6px #eee; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1em; max-width:1100px; margin:auto; }
+    .logo { font-weight:700; font-size:1.5em; color:#b46e46; }
+    nav ul { display:flex; gap:1em; list-style:none; margin:0; padding:0; }
+    nav a { text-decoration:none; color:#222; font-weight:500; padding:0.3em 0.8em; border-radius:5px; }
+    nav a.active, nav a:hover { background:#ffe3c8; color:#b46e46; }
+    main { max-width:1100px; margin:auto; padding:1em; }
+    .services-section { background:#fff5e8; border-radius:10px; padding:2em 1em; }
+    .service-detail { margin-bottom:2.5em; }
+    .service-detail h2 { margin-top:0; color:#b46e46; }
+    .service-media, .coaching-media, .package-media { margin-bottom:1em; }
+    .service-media img, .package-media img { max-width:300px; width:100%; border-radius:8px; }
+    .coaching-media video { max-width:300px; width:100%; border-radius:8px; }
+    ul { padding-left:1.5em; }
+    .price { color:#b46e46; font-weight:bold; font-size:1.2em; }
+    .package-detail { background:#fff5e8; border-radius:8px; padding:1em; }
+    footer { text-align:center; padding:2em 1em; color:#b46e46; background:#fff5e8; margin-top:2em; }
+    @media (max-width:800px) {
+      .service-media img, .package-media img, .coaching-media video { max-width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="services-section">
+      <h1>Our Services</h1>
+      <!-- Tantric Yoga -->
+      <div class="service-detail" id="tantric-yoga">
+        <h2>Tantric Yoga</h2>
+        <div class="service-media"></div>
+        <ul>
+          <li><strong>Benefits:</strong> Deep physical, emotional, and spiritual healing and empowerment.</li>
+          <li><strong>Formats:</strong> Online or in-person, group or private sessions available.</li>
+          <li><strong>Unique Aspects:</strong> Dr. C’s approach integrates modern psychology and ancient wisdom for lasting transformation.</li>
+        </ul>
+        <p>
+          Whether you’re a beginner or experienced, Dr. C guides you through practices tailored to your needs, fostering self-love, resilience, and joy.
+        </p>
+      </div>
+      <!-- Bi-Weekly Coaching -->
+      <div class="service-detail" id="biweekly-coaching">
+        <h2>Bi-Weekly Coaching</h2>
+        <div class="coaching-media"></div>
+        <ul>
+          <li><strong>Topics:</strong> Mindfulness, stress management, relationships, personal growth.</li>
+          <li><strong>Format:</strong> 60-minute calls every two weeks, with personalized preparation and follow-up.</li>
+          <li><strong>Benefits:</strong> Gain clarity, direction, and support for your goals.</li>
+        </ul>
+        <p>
+          Dr. C’s coaching is compassionate and insightful, helping you break through barriers and live your best life.
+        </p>
+      </div>
+      <!-- Package -->
+      <div class="service-detail package-detail">
+        <h2>Exclusive Package: <span class="price">$7,777</span></h2>
+        <div class="package-media"></div>
+        <ul>
+          <li>All Tantric Yoga sessions (group & private)</li>
+          <li>Bi-Weekly Coaching Calls</li>
+          <li>Exclusive resources: meditations, guides, and more</li>
+          <li>Personalized support from Dr. C</li>
+        </ul>
+        <p>
+          Invest in your well-being for lasting transformation. <a href="contact.html">Get Started</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Tantric Yoga media
+    document.querySelector('.service-media').innerHTML = `
+      <img src="images/tantric-yoga2.jpg" alt="Tantric Yoga in nature" loading="lazy">
+    `;
+
+    // Coaching media
+    document.querySelector('.coaching-media').innerHTML = `
+      <video controls width="300" poster="images/coaching-video-poster.jpg">
+        <source src="videos/coaching.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `;
+
+    // Package media
+    document.querySelector('.package-media').innerHTML = `
+      <img src="images/package.jpg" alt="Personalized Yoga & Coaching" loading="lazy">
+    `;
+  </script>
+</body>
+</html>

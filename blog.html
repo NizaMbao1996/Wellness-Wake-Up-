@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Blog & Resources</title>
+  <style>
+    body { font-family:sans-serif; margin:0; background:#faf8f6; color:#222; }
+    header { background:#fff8ef; box-shadow:0 2px 6px #eee; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1em; max-width:1100px; margin:auto; }
+    .logo { font-weight:700; font-size:1.5em; color:#b46e46; }
+    nav ul { display:flex; gap:1em; list-style:none; margin:0; padding:0; }
+    nav a { text-decoration:none; color:#222; font-weight:500; padding:0.3em 0.8em; border-radius:5px; }
+    nav a.active, nav a:hover { background:#ffe3c8; color:#b46e46; }
+    main { max-width:1100px; margin:auto; padding:1em; }
+    .blog-section { background:#fff5e8; border-radius:10px; padding:2em 1em; }
+    .blog-category { margin-bottom:2.5em; }
+    .blog-article { display:flex; align-items:flex-start; gap:1.2em; background:#fff; border-radius:9px; box-shadow:0 2px 12px #f5e2d0; padding:1em; margin-bottom:1em; }
+    .blog-article img, .blog-article video { max-width:120px; width:100%; border-radius:7px; }
+    .blog-article h3 { margin:0 0 0.3em 0; }
+    .success-story { background:#fff; border-radius:9px; box-shadow:0 2px 12px #f5e2d0; padding:1em; margin-bottom:1em; display:flex; align-items:center; gap:1em; }
+    .success-story img, .success-story video { width:70px; height:70px; border-radius:50%; object-fit:cover; }
+    .story-author { font-style:italic; color:#b46e46; margin:0.5em 0 0; }
+    .downloads-list { list-style:none; padding:0; }
+    .downloads-list li { margin-bottom:0.7em; }
+    .newsletter-signup { background:#fff3e0; border:1px dashed #b46e46; border-radius:8px; padding:1em; margin-top:2em; }
+    .newsletter-signup input[type="email"] { padding:0.5em; border-radius:5px; border:1px solid #b46e46; margin-right:0.5em; }
+    .newsletter-signup button { background:#b46e46; color:#fff; border:none; border-radius:5px; padding:0.5em 1.2em; font-weight:600; }
+    .newsletter-signup button:hover { background:#a95c30; }
+    footer { text-align:center; padding:2em 1em; color:#b46e46; background:#fff5e8; margin-top:2em; }
+    @media (max-width:800px) {
+      .blog-article { flex-direction:column; }
+      .blog-article img, .blog-article video { max-width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-section">
+      <h1>Wellness Resources</h1>
+
+      <!-- Wellness Tips -->
+      <div class="blog-category">
+        <h2>Wellness Tips & Articles</h2>
+        <div id="blog-articles"></div>
+      </div>
+
+      <!-- Success Stories -->
+      <div class="blog-category">
+        <h2>Success Stories</h2>
+        <div id="success-stories"></div>
+      </div>
+
+      <!-- Downloads -->
+      <div class="blog-category">
+        <h2>Free Downloads</h2>
+        <ul class="downloads-list">
+          <li><a href="downloads/meditation-guide.pdf" download>Guided Meditation PDF</a></li>
+          <li><a href="downloads/yoga-routine.pdf" download>Morning Yoga Routine (PDF)</a></li>
+          <li><a href="downloads/healthy-recipes.pdf" download>Healthy Recipes Guide</a></li>
+          <li><a href="downloads/meditation-audio.mp3" download>Relaxation Meditation (Audio)</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="newsletter-signup">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletter-success" style="display:none;color:green;">Thank you for subscribing!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Blog Articles (with images/videos)
+    const articles = [
+      {
+        title: "5 Morning Yoga Poses to Start Your Day",
+        img: "images/blog-yoga.jpg",
+        link: "#",
+        summary: "Boost your energy and set a positive tone for the day with these simple yoga poses."
+      },
+      {
+        title: "Mindful Meditation for Stress Relief",
+        video: "videos/blog-meditation.mp4",
+        link: "#",
+        summary: "Discover a meditation practice that calms the mind and soothes the spirit."
+      },
+      {
+        title: "Nourishing Relationships with Tantric Wisdom",
+        img: "images/blog-relationships.jpg",
+        link: "#",
+        summary: "Explore how Tantric principles can deepen intimacy and connection."
+      }
+    ];
+
+    const blogArticles = document.getElementById('blog-articles');
+    articles.forEach(a => {
+      let media = '';
+      if (a.img) {
+        media = `<img src="${a.img}" alt="${a.title}" loading="lazy">`;
+      } else if (a.video) {
+        media = `<video controls width="120" poster="images/video-poster.jpg"><source src="${a.video}" type="video/mp4"></video>`;
+      }
+      blogArticles.innerHTML += `
+        <div class="blog-article">
+          ${media}
+          <div>
+            <h3>${a.title}</h3>
+            <p>${a.summary}</p>
+            <a href="${a.link}">Read More</a>
+          </div>
+        </div>
+      `;
+    });
+
+    // Success Stories (photos/videos)
+    const successStories = [
+      {
+        type: 'photo',
+        name: 'Elena G.',
+        text: "After joining Dr. C’s program, I feel more balanced and energized every day.",
+        img: 'images/success-elena.jpg'
+      },
+      {
+        type: 'video',
+        name: 'Marcus W.',
+        text: "My relationships and confidence have transformed thanks to Tantric Yoga.",
+        video: 'videos/success-marcus.mp4'
+      }
+    ];
+
+    const storiesDiv = document.getElementById('success-stories');
+    successStories.forEach(s => {
+      let media = '';
+      if (s.type === 'photo') {
+        media = `<img src="${s.img}" alt="${s.name}" loading="lazy">`;
+      } else if (s.type === 'video') {
+        media = `<video controls width="70"><source src="${s.video}" type="video/mp4"></video>`;
+      }
+      storiesDiv.innerHTML += `
+        <div class="success-story">
+          ${media}
+          <div>
+            <blockquote>${s.text}</blockquote>
+            <p class="story-author">- ${s.name}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    // Newsletter Signup JS
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('newsletter-success').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
