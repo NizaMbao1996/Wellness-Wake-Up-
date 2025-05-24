@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Get Started</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h1>Contact & Get Started</h1>
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit">Send Message</button>
+          <p id="contact-success" style="display:none;color:green;">Thank you! Your message has been sent.</p>
+        </form>
+        <!-- Scheduling and Info -->
+        <div class="contact-info">
+          <h2>Schedule a Session</h2>
+          <p>Book your session directly via Calendly:</p>
+          <a href="https://calendly.com/dr-c-sessions" target="_blank" class="cta-button">Book on Calendly</a>
+          
+          <h3>Connect on Social</h3>
+          <ul class="social-links">
+            <li><a href="https://instagram.com/dr.c.wellness" target="_blank">Instagram</a></li>
+            <li><a href="https://facebook.com/dr.c.wellness" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/dr_c_wellness" target="_blank">Twitter/X</a></li>
+          </ul>
+          <h3>Location</h3>
+          <p>Online worldwide. In-person by appointment in San Francisco, CA.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Contact Form Submission (demo only)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('contact-success').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
