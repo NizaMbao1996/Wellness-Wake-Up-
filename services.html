@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Services</title>
+  <style>
+    body { font-family: sans-serif; margin:0; background:#faf8f6; color:#222;}
+    header { background:#fff8ef; box-shadow:0 2px 6px #eee;}
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1em; max-width:1100px; margin:auto;}
+    .logo { font-weight:700; font-size:1.5em; color:#b46e46;}
+    nav ul { display:flex; gap:1em; list-style:none; margin:0; padding:0;}
+    nav a { text-decoration:none; color:#222; font-weight:500; padding:0.3em 0.8em; border-radius:5px;}
+    nav a.active, nav a:hover { background:#ffe3c8; color:#b46e46;}
+    main { max-width: 900px; margin:auto; padding:1em;}
+    .services-list { display:flex; flex-wrap:wrap; gap:2em;}
+    .service-detail { background:#fff; border-radius:10px; box-shadow:0 2px 12px #f5e2d0; padding:1.8em; flex:1 1 320px; min-width:220px;}
+    .service-detail img { width:100%; max-height:160px; object-fit:cover; border-radius:8px;}
+    .dynamic-img { display:block; margin:1em auto; max-width:100%; border-radius:10px; box-shadow:0 2px 8px #eee;}
+    .cta-button { display:inline-block; margin-top:1em; background:#b46e46; color:#fff; padding:0.7em 1.4em; border-radius:6px; font-weight:600; text-decoration:none; transition:background .2s;}
+    .cta-button:hover { background:#a95c30;}
+    .social-icons { display:flex; gap:1em; justify-content:center; margin:2em 0 0.5em 0;}
+    .social-icons img { width:32px; height:32px; object-fit:contain; border-radius:50%; transition:box-shadow .2s;}
+    .social-icons img:hover { box-shadow:0 2px 8px #b46e46;}
+    @media (max-width:800px) {
+      .services-list { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Our Services</h1>
+    <p>Explore the core offerings designed to help you transform your life, guided by Dr. C’s expertise and compassion.</p>
+    <div class="services-list">
+      <div class="service-detail">
+        <h2>Tantric Yoga In Nature</h2>
+        <div id="services-tantric-img"></div>
+        <p>Ancient wisdom meets modern practice in Dr. C’s unique Tantric Yoga sessions. Reconnect with your body, calm your mind, and expand your spirit.</p>
+      </div>
+      <div class="service-detail">
+        <h2>Bi-Weekly Coaching</h2>
+        <img src="images/Dr C 3.jpg" alt="Bi-Weekly Coaching" loading="lazy">
+        <p>Personalized, ongoing support for your journey: set goals, overcome obstacles, and flourish with regular one-on-one coaching sessions.</p>
+      </div>
+      <div class="service-detail">
+        <h2>Retreats & Workshops</h2>
+        <img src="images/Dr C.jpg" alt="Retreats" loading="lazy">
+        <p>Join empowering group events or intimate retreats to deepen your practice and community connection.</p>
+      </div>
+    </div>
+    <a href="contact.html" class="cta-button">Book a Free Consultation</a>
+    <div class="social-icons" id="social-icons"></div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+  <script>
+    // Add Dr C 1.jpg below "Tantric Yoga In Nature"
+    document.getElementById("services-tantric-img").innerHTML =
+      '<img src="images/Dr C 1.jpg" alt="Dr. C in Nature" class="dynamic-img">';
+
+    // Social media icons (no words)
+    const socials = [
+      {href:"https://facebook.com/",icon:"Facebook-icon.png",alt:"Facebook"},
+      {href:"https://instagram.com/",icon:"Instagram-icon.png",alt:"Instagram"},
+      {href:"https://t.me/",icon:"telegram.png",alt:"Telegram"},
+      {href:"https://x.com/",icon:"X-icon.png",alt:"X"},
+      {href:"https://youtube.com/",icon:"YouTube-icon.png",alt:"YouTube"}
+    ];
+    document.getElementById("social-icons").innerHTML =
+      socials.map(s =>
+        `<a href="${s.href}" target="_blank" rel="noopener">
+          <img src="images/${s.icon}" alt="${s.alt}" title="${s.alt}">
+        </a>`
+      ).join('');
+  </script>
+</body>
+</html>

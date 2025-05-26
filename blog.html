@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wellness Wake Up | Blog</title>
+  <style>
+    body { font-family: sans-serif; margin:0; background:#faf8f6; color:#222;}
+    header { background:#fff8ef; box-shadow:0 2px 6px #eee;}
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1em; max-width:1100px; margin:auto;}
+    .logo { font-weight:700; font-size:1.5em; color:#b46e46;}
+    nav ul { display:flex; gap:1em; list-style:none; margin:0; padding:0;}
+    nav a { text-decoration:none; color:#222; font-weight:500; padding:0.3em 0.8em; border-radius:5px;}
+    nav a.active, nav a:hover { background:#ffe3c8; color:#b46e46;}
+    main { max-width: 800px; margin:auto; padding:1em;}
+    .blog-list { display:flex; flex-direction:column; gap:2em;}
+    .blog-post { background:#fff; border-radius:10px; box-shadow:0 2px 12px #f5e2d0; padding:1.5em;}
+    .blog-post img { width:100%; max-height:160px; object-fit:cover; border-radius:8px; margin-bottom:1em;}
+    .dynamic-img { display:block; margin:1em auto; max-width:100%; border-radius:10px; box-shadow:0 2px 8px #eee;}
+    .blog-post h2 { margin-top:0;}
+    .social-icons { display:flex; gap:1em; justify-content:center; margin:2em 0 0.5em 0;}
+    .social-icons img { width:32px; height:32px; object-fit:contain; border-radius:50%; transition:box-shadow .2s;}
+    .social-icons img:hover { box-shadow:0 2px 8px #b46e46;}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Wellness Wake Up</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Get Started</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Wellness Wake Up Blog</h1>
+    <div class="blog-list">
+      <div class="blog-post">
+        <h2>Morning Yoga Poses To Start Your Day</h2>
+        <div id="blog-morning-img"></div>
+        <p>
+          Discover simple practices to ground yourself each morning and set a positive tone for the day. Learn Dr. C’s favorite breathing and movement routines.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="blog-post">
+        <h2>Nourishing Relationships With Tantric Wisdom</h2>
+        <div id="blog-relationships-img"></div>
+        <p>
+          Tantric Yoga is about energy, intention, and wholeness. Find out how this ancient practice can transform more than your body.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    <div class="social-icons" id="social-icons"></div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Wellness Wake Up. All rights reserved.</p>
+  </footer>
+  <script>
+    // Add Dr C 4.jpg for morning yoga
+    document.getElementById("blog-morning-img").innerHTML =
+      '<img src="images/Dr C 4.jpg" alt="Morning Yoga Pose with Dr. C" class="dynamic-img">';
+    // Add Dr C 5.jpg for relationships
+    document.getElementById("blog-relationships-img").innerHTML =
+      '<img src="images/Dr C 5.jpg" alt="Dr. C Tantric Relationships" class="dynamic-img">';
+    // Social media icons
+    const socials = [
+      {href:"https://facebook.com/",icon:"Facebook-icon.png",alt:"Facebook"},
+      {href:"https://instagram.com/",icon:"Instagram-icon.png",alt:"Instagram"},
+      {href:"https://t.me/",icon:"telegram.png",alt:"Telegram"},
+      {href:"https://x.com/",icon:"X-icon.png",alt:"X"},
+      {href:"https://youtube.com/",icon:"YouTube-icon.png",alt:"YouTube"}
+    ];
+    document.getElementById("social-icons").innerHTML =
+      socials.map(s =>
+        `<a href="${s.href}" target="_blank" rel="noopener">
+          <img src="images/${s.icon}" alt="${s.alt}" title="${s.alt}">
+        </a>`
+      ).join('');
+  </script>
+</body>
+</html>
